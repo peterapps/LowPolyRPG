@@ -1,0 +1,44 @@
+{
+	"image": "/img/mario.png",
+	"width": 291,
+	"height": 572,
+	"frameWidth": 97,
+	"frameHeight": 143,
+	"numFrames": 12,
+	"rows": 4,
+	"columns": 3,
+	"animations": {
+		"walk_right": {
+			"frames": [0, 1, 2],
+			"repeat": -1
+		},
+		"walk_left": {
+			"frames": [3, 4, 5],
+			"repeat": -1
+		},
+		"walk_front": {
+			"frames": [6, 7, 8],
+			"repeat": -1
+		},
+		"walk_back": {
+			"frames": [9, 10, 11],
+			"repeat": -1
+		},
+		"face_right": {
+			"frames": [0],
+			"repeat": 0
+		},
+		"face_left": {
+			"frames": [3],
+			"repeat": 0
+		},
+		"face_front": {
+			"frames": [6],
+			"repeat": 0
+		},
+		"face_back": {
+			"frames": [9],
+			"repeat": 0
+		}
+	}
+}

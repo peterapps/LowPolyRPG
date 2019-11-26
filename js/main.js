@@ -8,8 +8,8 @@ const aspect_ratio = window.innerWidth / window.innerHeight;
 const near_clip = 0.1;
 const far_clip = 1000;
 var camera = new THREE.PerspectiveCamera(field_of_view, aspect_ratio, near_clip, far_clip);
-camera.position.set(0, 7, 15);
-camera.lookAt(0, 0, 0);
+camera.position.set(0, 50, 150);
+camera.lookAt(0, 50, 0);
 
 // Renderer
 var renderer = new THREE.WebGLRenderer();
@@ -30,18 +30,24 @@ var ground = createGround();
 scene.add(ground);
 
 var tree = createTree();
-tree.position.set(1, 2, 0);
+tree.position.set(10, 20, 0);
 scene.add(tree);
 
 var cloud = createCloud();
-cloud.position.set(-5, 7, -1);
+cloud.position.set(-50, 70, -10);
 scene.add(cloud);
+
+var sprite = new Sprite("/assets/mario.json", function(){
+	sprite.play("walk_right");
+	sprite.mesh.position.set(0, sprite.frameHeight/2, 0);
+	scene.add(sprite.mesh);
+});
 
 // Animate loop
 function animate(){
 	requestAnimationFrame(animate);
-	
-	
+	if (sprite.mesh) sprite.mesh.position.z += 0.1;
+	sprite.update();
 	
 	renderer.render(scene, camera);
 }
